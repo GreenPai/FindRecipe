@@ -10,24 +10,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class RecipeController {
 
     @PostMapping("/recipe")
-    public String  get(@RequestParam("id1") String id1,
-                       @RequestParam("id1") String id2,
-                       @RequestParam("id1") String id3,
-                       @RequestParam("id1") String id4,
-                       @RequestParam("id1") String id5){
+    public String get(@RequestParam(value = "id1", required = false) String id1,
+                      @RequestParam(value = "id2", required = false) String id2,
+                      @RequestParam(value = "id3", required = false) String id3,
+                      @RequestParam(value = "id4", required = false) String id4,
+                      @RequestParam(value = "id5", required = false) String id5) {
 
-        System.out.println(id1);
-        System.out.println(id2);
-        System.out.println(id3);
-        System.out.println(id4);
-        System.out.println(id5);
 
-        return "recipe.html";
+        return "recipe";
     }
 
     @GetMapping("/")
     public String index() {
-        return "index";  // index.html을 반환
+        return "index";
     }
+
+
 
 }
